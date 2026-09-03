@@ -1,0 +1,53 @@
+﻿# ========================
+# Python
+# ========================
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ========================
+# Data files (QUA LON, khong push len GitHub)
+# ========================
+data/raw/
+data/warehouse/
+data/export/
+*.parquet
+*.duckdb
+*.duckdb.wal
+
+# ========================
+# Power BI (file .pbix qua lon)
+# ========================
+powerbi/*.pbix
+
+# ========================
+# Airflow
+# ========================
+airflow/logs/
+
+# ========================
+# IDE / Editor
+# ========================
+.vscode/
+.idea/
+
+# ========================
+# OS
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+# dbt
+# ========================
+transform/target/
+transform/dbt_packages/
+transform/logs/
+
+# ========================
+# Misc
+# ========================
+.env
+*.log
