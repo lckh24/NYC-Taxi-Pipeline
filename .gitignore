@@ -8,7 +8,7 @@ __pycache__/
 venv/
 
 # ========================
-# Data files (QUA LON, khong push len GitHub)
+# Data files
 # ========================
 data/raw/
 data/warehouse/
@@ -18,7 +18,7 @@ data/export/
 *.duckdb.wal
 
 # ========================
-# Power BI (file .pbix qua lon)
+# Power BI
 # ========================
 powerbi/*.pbix
 
@@ -26,18 +26,6 @@ powerbi/*.pbix
 # Airflow
 # ========================
 airflow/logs/
-
-# ========================
-# IDE / Editor
-# ========================
-.vscode/
-.idea/
-
-# ========================
-# OS
-# ========================
-.DS_Store
-Thumbs.db
 
 # ========================
 # dbt
@@ -51,3 +39,4 @@ transform/logs/
 # ========================
 .env
 *.log
+Context.md
