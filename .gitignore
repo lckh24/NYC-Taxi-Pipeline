@@ -1,4 +1,4 @@
-﻿# ========================
+# ========================
 # Python
 # ========================
 __pycache__/
@@ -35,8 +35,19 @@ transform/dbt_packages/
 transform/logs/
 
 # ========================
-# Misc
+# Misc & Scratch
 # ========================
 .env
 *.log
-Context.md
+.scratch/
+
+# ========================
+# Agent files & Local Docs
+# ========================
+.agents/
+skills-lock.json
+skill-lock.json
+AGENTS.md
+CONTEXT.md
+docs/
+
