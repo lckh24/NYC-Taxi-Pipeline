@@ -1,17 +1,24 @@
+import argparse
+
 from ingestion.batch import Batch
-from ingestion.download import download_batch
-from ingestion.load import load_raw_batch
-from ingestion.validate import validate_raw_file
+from ingestion.ingest import ingest_batch
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Ingest one NYC Taxi batch.")
+    parser.add_argument("taxi_type", choices=("yellow", "green"))
+    parser.add_argument("year", type=int)
+    parser.add_argument("month", type=int)
+    return parser.parse_args()
 
 
 def main() -> None:
-    batch = Batch("green", 2025, 2)
-    raw_path = download_batch(batch)
-    result = validate_raw_file(batch, raw_path)
-    if result.is_valid:
-        print("Batch is valid.")
-        row_count = load_raw_batch(batch, raw_path)
-        print(f"Loaded {row_count:,} rows into DuckDB.")
+    args = parse_args()
+    batch = Batch(args.taxi_type, args.year, args.month)
+    result = ingest_batch(batch)
+
+    if result.is_loaded:
+        print(f"Loaded {result.row_count:,} rows into DuckDB.")
     else:
         print("Batch has issues:")
         for error in result.errors:
